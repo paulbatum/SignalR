@@ -29,7 +29,7 @@ namespace SignalR
         {
             var request = (HttpWebRequest)HttpWebRequest.Create(url);
             requestPreparer(request);
-            return request.GetResponseAsync();
+            return GetResponseAsync(request);
         }
 
         public static Task<HttpWebResponse> PostAsync(string url)
@@ -113,7 +113,7 @@ namespace SignalR
                 })
                 .Success(t =>
                 {
-                    return request.GetResponseAsync();
+                    return GetResponseAsync(request);
                 })
                 .Unwrap();
         }
