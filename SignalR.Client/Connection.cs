@@ -18,7 +18,11 @@ namespace SignalR.Client
         public event Action<Exception> Error;
         public event Action Closed;
 
-        private readonly IClientTransport _transport = new WebSocketTransport();
+        #if SILVERLIGHT
+            private readonly IClientTransport _transport = new LongPollingTransport();
+        #else
+            private readonly IClientTransport _transport = new WebSocketTransport();
+        #endif
 
         public Connection(string url)
         {
