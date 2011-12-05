@@ -31,9 +31,9 @@ namespace SignalR.Client.Transports
 
             lock (_lockObj)
             {
-                _client = new WcfWebSocketClient(new Uri(url));
-                _client.Open();
+                _client = new WcfWebSocketClient(new Uri(url));                
                 _client.OnMessage = response => ProcessResponse(connection, response);
+                _client.Open().Wait();
             }
         }
 
