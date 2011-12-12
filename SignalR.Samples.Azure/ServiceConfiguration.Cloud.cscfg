@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ServiceConfiguration serviceName="SignalR.Samples.Azure.ccproj" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*">
+<ServiceConfiguration serviceName="SignalR.Samples.Azure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="1" osVersion="*">
   <Role name="SignalR.Samples">
-    <Instances count="1" />
+    <Instances count="2" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
